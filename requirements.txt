@@ -1,0 +1,14 @@
+# Zenvyrolabs Voice Studio - Python dependencies
+# Pinned loosely; Python 3.11 required (3.12+ breaks the AI/audio stack).
+
+gradio>=4.29,<5
+edge-tts>=6.1
+pydub>=0.25
+numpy<2.0
+soundfile>=0.12
+noisereduce>=3.0
+transformers>=4.40
+torch>=2.2
+f5-tts
+transliterate>=1.10
+huggingface_hub==0.23.5

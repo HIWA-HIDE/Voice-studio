@@ -1,0 +1,15 @@
+venv/
+rvc_venv/
+__pycache__/
+*.pyc
+hf_cache/
+temp/
+saved_voices/
+rvc_models/
+training_data/
+*.wav
+*.mp3
+.git/
+.gitignore
+setup.bat
+run_all.bat

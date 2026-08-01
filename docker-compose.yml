@@ -1,0 +1,26 @@
+services:
+  voice-studio:
+    build: .
+    container_name: zenvyrolabs-voice-studio
+    ports:
+      - "7860:7860"
+    environment:
+      - RUNNING_IN_DOCKER=1
+      - GRADIO_SERVER_PORT=7860
+    volumes:
+      # User's cloned/saved character voices — must survive restarts.
+      - saved_voices:/app/saved_voices
+      # Downloaded/trained RVC (.pth) character models.
+      - rvc_models:/app/rvc_models
+      # Preprocessed ML training datasets from the Voice Training Studio tab.
+      - training_data:/app/training_data
+      # Hugging Face model cache (Whisper, etc.) — without this volume, the
+      # ~2.4GB of models re-downloads every time the container restarts.
+      - hf_cache:/app/hf_cache
+    restart: unless-stopped
+
+volumes:
+  saved_voices:
+  rvc_models:
+  training_data:
+  hf_cache:
